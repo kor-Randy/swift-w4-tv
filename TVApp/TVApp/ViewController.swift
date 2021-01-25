@@ -8,6 +8,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private var toggleSwitch: UISegmentedControl = {
+        let view = UISegmentedControl(items: ["오리지날", "라이브"])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        //세그먼트 selected 시, 설정 변경
+        view.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.selected)
+        //세그먼트 selected 아닐 시
+        view.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.gray], for: UIControl.State.normal)
+        //처음 1번 선택
+        view.selectedSegmentIndex = 0
+        
+        view.addTarget(self, action: #selector(segChanged(seg:)), for: .valueChanged)
+        
+        return view
+    }()
+    
     private var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -37,6 +52,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         initNavigationBar()
         setSearchBar()
+        setSegment()
         view.backgroundColor = .white
     }
     
@@ -54,7 +70,21 @@ class ViewController: UIViewController {
         searchBar.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
     }
     
+    private func setSegment(){
+        view.addSubview(toggleSwitch)
+        toggleSwitch.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 3).isActive = true
+        toggleSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        toggleSwitch.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
+    }
+    
     @objc func tappedStar() {
         // TODO: 즐겨찾기 화면 전환
     }
+    
+    @objc func segChanged(seg: UISegmentedControl){
+        //segment 값 변경시
+        // TODO: COllectionView Cell Item 변경
+    }
+    
+    
 }
