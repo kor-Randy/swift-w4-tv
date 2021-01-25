@@ -12,7 +12,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.clipsToBounds = true
-        img.contentMode = .scaleAspectFit
+        img.contentMode = .scaleToFill
         return img
     }()
 
@@ -20,7 +20,6 @@ class ItemCollectionViewCell: UICollectionViewCell {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.automaticallyAdjustsScrollIndicatorInsets = false
-        textView.backgroundColor = .gray
         textView.textColor = .black
         textView.sizeToFit()
         return textView

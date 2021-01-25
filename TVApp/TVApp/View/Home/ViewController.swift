@@ -49,11 +49,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addViews()
+        view.backgroundColor = .white
+    }
+    
+    private func addViews() {
         initNavigationBar()
         setSearchBar()
         setSegment()
         setCollectionView()
-        view.backgroundColor = .white
     }
     
     private func initNavigationBar() {
@@ -61,31 +65,6 @@ class ViewController: UIViewController {
         starBarButton.target = self
         starBarButton.action = #selector(tappedStar)
         navigationItem.rightBarButtonItem = starBarButton
-    }
-    
-    private func setSearchBar() {
-        view.addSubview(searchBar)
-        searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2).isActive = true
-        searchBar.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        searchBar.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
-    }
-    
-    private func setSegment() {
-        view.addSubview(toggleSwitch)
-        toggleSwitch.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 3).isActive = true
-        toggleSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        toggleSwitch.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
-    }
-    
-    private func setCollectionView() {
-        view.addSubview(collectionView)
-        collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
-        collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -10).isActive = true
-        collectionView.topAnchor.constraint(equalTo: toggleSwitch.bottomAnchor, constant: 5).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(ItemCollectionViewCell.self, forCellWithReuseIdentifier: "ItemCell")
     }
     
     @objc func tappedStar() {
@@ -109,6 +88,33 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         cell.updateUI(thumbnail: nil, title: nil, channel: nil, visitCount: nil)
         return cell
+    }
+}
+
+extension ViewController {
+    private func setSearchBar() {
+        view.addSubview(searchBar)
+        searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2).isActive = true
+        searchBar.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        searchBar.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
+    }
+    
+    private func setSegment() {
+        view.addSubview(toggleSwitch)
+        toggleSwitch.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 3).isActive = true
+        toggleSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        toggleSwitch.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
+    }
+    
+    private func setCollectionView() {
+        view.addSubview(collectionView)
+        collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -10).isActive = true
+        collectionView.topAnchor.constraint(equalTo: toggleSwitch.bottomAnchor, constant: 5).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(ItemCollectionViewCell.self, forCellWithReuseIdentifier: "ItemCell")
     }
 }
 
