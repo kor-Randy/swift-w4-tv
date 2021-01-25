@@ -79,11 +79,13 @@ class ViewController: UIViewController {
     
     private func setCollectionView() {
         view.addSubview(collectionView)
-        collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
-        collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 10).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -10).isActive = true
         collectionView.topAnchor.constraint(equalTo: toggleSwitch.bottomAnchor, constant: 5).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.register(ItemCollectionViewCell.self, forCellWithReuseIdentifier: "ItemCell")
     }
     
     @objc func tappedStar() {
@@ -102,6 +104,19 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as? ItemCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.updateUI(thumbnail: nil, title: nil, channel: nil, visitCount: nil)
+        return cell
+    }
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width - 5
+        let height = collectionView.bounds.height * 0.7
+        
+        return CGSize(width: width, height: height)
     }
 }
