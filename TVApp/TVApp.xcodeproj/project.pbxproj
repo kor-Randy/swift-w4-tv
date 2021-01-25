@@ -15,6 +15,8 @@
 		C235282125BE5AA6007B4C19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C235281F25BE5AA6007B4C19 /* LaunchScreen.storyboard */; };
 		C235282C25BE5AA7007B4C19 /* TVAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235282B25BE5AA7007B4C19 /* TVAppTests.swift */; };
 		C235283725BE5AA7007B4C19 /* TVAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235283625BE5AA7007B4C19 /* TVAppUITests.swift */; };
+		C235285125BEA95F007B4C19 /* live.json in Resources */ = {isa = PBXBuildFile; fileRef = C235285025BEA95F007B4C19 /* live.json */; };
+		C235285625BEA964007B4C19 /* original.json in Resources */ = {isa = PBXBuildFile; fileRef = C235285525BEA964007B4C19 /* original.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		C235283225BE5AA7007B4C19 /* TVAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C235283625BE5AA7007B4C19 /* TVAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAppUITests.swift; sourceTree = "<group>"; };
 		C235283825BE5AA7007B4C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C235285025BEA95F007B4C19 /* live.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = live.json; path = ../../../../../Downloads/live.json; sourceTree = "<group>"; };
+		C235285525BEA964007B4C19 /* original.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = original.json; path = ../../../../../Downloads/original.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		C235281325BE5AA6007B4C19 /* TVApp */ = {
 			isa = PBXGroup;
 			children = (
+				C235284F25BEA942007B4C19 /* SampleData */,
 				C235281425BE5AA6007B4C19 /* AppDelegate.swift */,
 				C235281625BE5AA6007B4C19 /* SceneDelegate.swift */,
 				C235281825BE5AA6007B4C19 /* ViewController.swift */,
@@ -126,6 +131,15 @@
 				C235283825BE5AA7007B4C19 /* Info.plist */,
 			);
 			path = TVAppUITests;
+			sourceTree = "<group>";
+		};
+		C235284F25BEA942007B4C19 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				C235285525BEA964007B4C19 /* original.json */,
+				C235285025BEA95F007B4C19 /* live.json */,
+			);
+			path = SampleData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C235282125BE5AA6007B4C19 /* LaunchScreen.storyboard in Resources */,
+				C235285125BEA95F007B4C19 /* live.json in Resources */,
 				C235281E25BE5AA6007B4C19 /* Assets.xcassets in Resources */,
+				C235285625BEA964007B4C19 /* original.json in Resources */,
 				C235281C25BE5AA6007B4C19 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

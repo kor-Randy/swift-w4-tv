@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         view.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.gray], for: UIControl.State.normal)
         //처음 1번 선택
         view.selectedSegmentIndex = 0
-        
         view.addTarget(self, action: #selector(segChanged(seg:)), for: .valueChanged)
         
         return view
