@@ -11,11 +11,11 @@ class ViewController: UIViewController {
     private var toggleSwitch: UISegmentedControl = {
         let view = UISegmentedControl(items: ["오리지날", "라이브"])
         view.translatesAutoresizingMaskIntoConstraints = false
-        //세그먼트 selected 시, 설정 변경
-        view.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.selected)
-        //세그먼트 selected 아닐 시
-        view.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.gray], for: UIControl.State.normal)
-        //처음 1번 선택
+        // 세그먼트 selected 시, 설정 변경
+        view.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.selected)
+        // 세그먼트 selected 아닐 시
+        view.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: UIControl.State.normal)
+        // 처음 1번 선택
         view.selectedSegmentIndex = 0
         view.addTarget(self, action: #selector(segChanged(seg:)), for: .valueChanged)
         
@@ -52,6 +52,7 @@ class ViewController: UIViewController {
         initNavigationBar()
         setSearchBar()
         setSegment()
+        setCollectionView()
         view.backgroundColor = .white
     }
     
@@ -69,21 +70,38 @@ class ViewController: UIViewController {
         searchBar.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
     }
     
-    private func setSegment(){
+    private func setSegment() {
         view.addSubview(toggleSwitch)
         toggleSwitch.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 3).isActive = true
         toggleSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         toggleSwitch.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
     }
     
+    private func setCollectionView() {
+        view.addSubview(collectionView)
+        collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 10).isActive = true
+        collectionView.topAnchor.constraint(equalTo: toggleSwitch.bottomAnchor, constant: 5).isActive = true
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+    
     @objc func tappedStar() {
         // TODO: 즐겨찾기 화면 전환
     }
     
-    @objc func segChanged(seg: UISegmentedControl){
-        //segment 값 변경시
+    @objc func segChanged(seg: UISegmentedControl) {
+        // segment 값 변경시
         // TODO: COllectionView Cell Item 변경
     }
+}
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
     
-    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
 }
