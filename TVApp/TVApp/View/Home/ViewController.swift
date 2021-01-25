@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    private var toggleSwitch: UISegmentedControl = {
+    private var segment: UISegmentedControl = {
         let view = UISegmentedControl(items: ["오리지날", "라이브"])
         view.translatesAutoresizingMaskIntoConstraints = false
         // 세그먼트 selected 시, 설정 변경
@@ -100,17 +100,17 @@ extension ViewController {
     }
     
     private func setSegment() {
-        view.addSubview(toggleSwitch)
-        toggleSwitch.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 3).isActive = true
-        toggleSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        toggleSwitch.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
+        view.addSubview(segment)
+        segment.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 3).isActive = true
+        segment.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        segment.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
     }
     
     private func setCollectionView() {
         view.addSubview(collectionView)
         collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -10).isActive = true
-        collectionView.topAnchor.constraint(equalTo: toggleSwitch.bottomAnchor, constant: 5).isActive = true
+        collectionView.topAnchor.constraint(equalTo: segment.bottomAnchor, constant: 5).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         collectionView.dataSource = self
         collectionView.delegate = self
