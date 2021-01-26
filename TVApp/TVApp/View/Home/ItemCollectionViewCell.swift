@@ -75,7 +75,10 @@ class ItemCollectionViewCell: UICollectionViewCell {
         setChannel()
         setVisitCount()
     }
+}
 
+// MARK: Add UI Components
+extension ItemCollectionViewCell {
     private func setThumbnail() {
         addSubview(thumbnail)
         thumbnail.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true

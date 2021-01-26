@@ -23,8 +23,7 @@ class ViewController: UIViewController {
     }
 
     @objc func segChanged(seg: UISegmentedControl) {
-        // segment 값 변경시
-        // TODO: COllectionView Cell Item 변경
+        watchMode = seg.selectedSegmentIndex
     }
 
     // MARK: Private
@@ -70,8 +69,10 @@ class ViewController: UIViewController {
         return button
     }()
 
-    private var watchMode: Int {
-        segment.selectedSegmentIndex
+    private var watchMode: Int = 0 {
+        didSet{
+            self.collectionView.reloadData()
+        }
     }
 
     private func addViews() {
