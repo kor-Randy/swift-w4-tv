@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
-        view.backgroundColor = .white
     }
 
     @objc func tappedStar() {
@@ -58,7 +57,7 @@ class ViewController: UIViewController {
         layout.minimumLineSpacing = 20
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .white
+
         return cv
     }()
 
@@ -70,8 +69,8 @@ class ViewController: UIViewController {
     }()
 
     private var watchMode: Int = 0 {
-        didSet{
-            self.collectionView.reloadData()
+        didSet {
+            collectionView.reloadData()
         }
     }
 

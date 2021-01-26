@@ -22,6 +22,7 @@
 		C277C5B325BFD4B400ADD2EC /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5B225BFD4B400ADD2EC /* JsonDecoder.swift */; };
 		C277C5B925BFD4CE00ADD2EC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5B825BFD4CE00ADD2EC /* HomeViewModel.swift */; };
 		C277C5C225BFD6AA00ADD2EC /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5C125BFD6AA00ADD2EC /* DataType.swift */; };
+		C277C5CB25BFDBD000ADD2EC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C277C5CA25BFDBD000ADD2EC /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		C277C5B225BFD4B400ADD2EC /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
 		C277C5B825BFD4CE00ADD2EC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C277C5C125BFD6AA00ADD2EC /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
+		C277C5CA25BFDBD000ADD2EC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				C235281D25BE5AA6007B4C19 /* Assets.xcassets */,
 				C235281F25BE5AA6007B4C19 /* LaunchScreen.storyboard */,
 				C235282225BE5AA6007B4C19 /* Info.plist */,
+				C277C5CA25BFDBD000ADD2EC /* Colors.xcassets */,
 			);
 			path = TVApp;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C235282125BE5AA6007B4C19 /* LaunchScreen.storyboard in Resources */,
+				C277C5CB25BFDBD000ADD2EC /* Colors.xcassets in Resources */,
 				C235281E25BE5AA6007B4C19 /* Assets.xcassets in Resources */,
 				C235281C25BE5AA6007B4C19 /* Main.storyboard in Resources */,
 			);

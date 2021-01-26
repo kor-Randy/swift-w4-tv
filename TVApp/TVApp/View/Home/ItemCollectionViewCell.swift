@@ -52,19 +52,21 @@ class ItemCollectionViewCell: UICollectionViewCell {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.automaticallyAdjustsScrollIndicatorInsets = false
-        textView.textColor = .black
+        textView.textColor = UIColor(named: "TextColor")
         textView.sizeToFit()
         return textView
     }()
 
     private var channel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor(named: "TextColor")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private var visitCount: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor(named: "TextColor")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
