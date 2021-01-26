@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Original
 
-struct Original: Decodable {
+struct Original: DataType{
     var clip: Clip
     var channel: Channel
 }

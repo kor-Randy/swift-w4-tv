@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - LiveData
 
-struct LiveData: Decodable {
+struct LiveData: DataType {
     var live: Live
     var channel: Channel
 }
