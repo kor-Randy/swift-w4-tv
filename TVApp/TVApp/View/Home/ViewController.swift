@@ -71,6 +71,7 @@ class ViewController: UIViewController {
     private var watchMode: Int = 0 {
         didSet {
             collectionView.reloadData()
+            collectionView.contentOffset = CGPoint(x: 0, y: 0)
         }
     }
 
@@ -101,6 +102,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         let data: DataType = (watchMode == 0) ? viewModel.originals[indexPath.row] : viewModel.lives[indexPath.row]
+        
 
         cell.updateUI(data: data)
         return cell

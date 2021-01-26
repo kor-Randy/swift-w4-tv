@@ -25,11 +25,11 @@ class ItemCollectionViewCell: UICollectionViewCell {
     func updateUI(data: DataType) {
         if let data = data as? Original {
             thumbnail.image = UIImage(named: data.clip.thumbnailUrl)
-            labelInThumbnail.text = "\(data.clip.duration)"
+            labelInThumbnail.text = "\(TimeConverter.shared.convertDuration(duration: data.clip.duration))"
             title.text = data.clip.title
             channel.text = data.channel.name
             visitCount.text = "▶︎ \(data.channel.visitCount)"
-            createTime.text = "• \(data.channel.createTime)"
+            createTime.text = "• \(TimeConverter.shared.maxRangeInSubtractDate(dateStr: data.channel.createTime))"
         } else {
             guard let data = data as? LiveData else { return }
             thumbnail.image = UIImage(named: data.live.thumbnailUrl)
@@ -37,7 +37,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
             title.text = data.live.title
             channel.text = data.channel.name
             visitCount.text = "▶︎ \(data.channel.visitCount)"
-            createTime.text = "• \(data.channel.createTime)"
+            createTime.text = "• \(TimeConverter.shared.maxRangeInSubtractDate(dateStr: data.channel.createTime))"
         }
     }
 
@@ -62,8 +62,10 @@ class ItemCollectionViewCell: UICollectionViewCell {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.automaticallyAdjustsScrollIndicatorInsets = false
+        textView.font = UIFont.systemFont(ofSize: 20)
+        textView.textContainer.maximumNumberOfLines = 2
         textView.textColor = UIColor(named: "TextColor")
-        textView.sizeToFit()
+        textView.isMultipleTouchEnabled = true
         return textView
     }()
 
