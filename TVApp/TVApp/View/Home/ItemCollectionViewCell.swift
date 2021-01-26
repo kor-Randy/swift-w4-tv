@@ -25,16 +25,19 @@ class ItemCollectionViewCell: UICollectionViewCell {
     func updateUI(data: DataType) {
         if let data = data as? Original {
             thumbnail.image = UIImage(named: data.clip.thumbnailUrl)
+            labelInThumbnail.text = "\(data.clip.duration)"
             title.text = data.clip.title
             channel.text = data.channel.name
-            visitCount.text = "\(data.channel.visitCount)"
+            visitCount.text = "▶︎ \(data.channel.visitCount)"
+            createTime.text = "• \(data.channel.createTime)"
         } else {
             guard let data = data as? LiveData else { return }
-
             thumbnail.image = UIImage(named: data.live.thumbnailUrl)
+            labelInThumbnail.text = "\(data.live.playCount)"
             title.text = data.live.title
             channel.text = data.channel.name
-            visitCount.text = "\(data.channel.visitCount)"
+            visitCount.text = "▶︎ \(data.channel.visitCount)"
+            createTime.text = "• \(data.channel.createTime)"
         }
     }
 
@@ -46,6 +49,13 @@ class ItemCollectionViewCell: UICollectionViewCell {
         img.clipsToBounds = true
         img.contentMode = .scaleToFill
         return img
+    }()
+
+    private var labelInThumbnail: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor(named: "TextColor")
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 
     private var title: UITextView = {
@@ -71,15 +81,25 @@ class ItemCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
+    private var createTime: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor(named: "TextColor")
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     private func addViews() {
         setThumbnail()
+        setLabelInThumbnail()
         setTitle()
         setChannel()
         setVisitCount()
+        setCreateTime()
     }
 }
 
 // MARK: Add UI Components
+
 extension ItemCollectionViewCell {
     private func setThumbnail() {
         addSubview(thumbnail)
@@ -87,6 +107,12 @@ extension ItemCollectionViewCell {
         thumbnail.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.6).isActive = true
         thumbnail.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 0).isActive = true
         thumbnail.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: 0).isActive = true
+    }
+
+    private func setLabelInThumbnail() {
+        addSubview(labelInThumbnail)
+        labelInThumbnail.rightAnchor.constraint(equalTo: thumbnail.rightAnchor, constant: -8).isActive = true
+        labelInThumbnail.bottomAnchor.constraint(equalTo: thumbnail.bottomAnchor, constant: -8).isActive = true
     }
 
     private func setTitle() {
@@ -106,6 +132,12 @@ extension ItemCollectionViewCell {
     private func setVisitCount() {
         addSubview(visitCount)
         visitCount.topAnchor.constraint(equalTo: channel.topAnchor).isActive = true
-        visitCount.leftAnchor.constraint(equalTo: channel.rightAnchor, constant: 2).isActive = true
+        visitCount.leftAnchor.constraint(equalTo: channel.rightAnchor, constant: 10).isActive = true
+    }
+
+    private func setCreateTime() {
+        addSubview(createTime)
+        createTime.topAnchor.constraint(equalTo: visitCount.topAnchor).isActive = true
+        createTime.leftAnchor.constraint(equalTo: visitCount.rightAnchor, constant: 10).isActive = true
     }
 }
