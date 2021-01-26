@@ -13,11 +13,9 @@ class HomeViewModel {
     init() {
         let originalDecoder = Decoder<Original>()
         originals = originalDecoder.decode(filename: "original")
-        print(originals)
 
         let liveDecoder = Decoder<LiveData>()
         lives = liveDecoder.decode(filename: "live")
-        print(lives)
     }
 
     // MARK: Internal
