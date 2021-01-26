@@ -8,6 +8,29 @@
 import UIKit
 
 class ItemCollectionViewCell: UICollectionViewCell {
+    // MARK: Lifecycle
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addViews()
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: Internal
+
+    func updateUI(thumbnail: UIImage?, title: String?, channel: String?, visitCount: Int?) {
+        self.thumbnail.image = UIImage(systemName: "heart.fill")
+        self.title.text = "title"
+        self.channel.text = "channel"
+        self.visitCount.text = "11111"
+    }
+
+    // MARK: Private
+
     private var thumbnail: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
@@ -36,16 +59,6 @@ class ItemCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addViews()
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     private func addViews() {
         setThumbnail()
@@ -80,12 +93,5 @@ class ItemCollectionViewCell: UICollectionViewCell {
         addSubview(visitCount)
         visitCount.topAnchor.constraint(equalTo: channel.topAnchor).isActive = true
         visitCount.leftAnchor.constraint(equalTo: channel.rightAnchor, constant: 2).isActive = true
-    }
-
-    func updateUI(thumbnail: UIImage?, title: String?, channel: String?, visitCount: Int?) {
-        self.thumbnail.image = UIImage(systemName: "heart.fill")
-        self.title.text = "title"
-        self.channel.text = "channel"
-        self.visitCount.text = "11111"
     }
 }
