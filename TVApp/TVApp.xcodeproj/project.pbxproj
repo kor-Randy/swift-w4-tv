@@ -117,11 +117,10 @@
 		C235281325BE5AA6007B4C19 /* TVApp */ = {
 			isa = PBXGroup;
 			children = (
+				C277C5D425BFEBB900ADD2EC /* Home */,
 				C277C5C025BFD6A100ADD2EC /* Protocols */,
-				C277C5B725BFD4C400ADD2EC /* ViewModel */,
 				C277C5B125BFD4AB00ADD2EC /* Services */,
 				C277C59E25BFD45500ADD2EC /* Model */,
-				C235285A25BEAB1F007B4C19 /* View */,
 				C235281425BE5AA6007B4C19 /* AppDelegate.swift */,
 				C235281625BE5AA6007B4C19 /* SceneDelegate.swift */,
 				C235281A25BE5AA6007B4C19 /* Main.storyboard */,
@@ -151,23 +150,6 @@
 			path = TVAppUITests;
 			sourceTree = "<group>";
 		};
-		C235285A25BEAB1F007B4C19 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C235285B25BEAB36007B4C19 /* Home */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C235285B25BEAB36007B4C19 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				C235281825BE5AA6007B4C19 /* ViewController.swift */,
-				C235285C25BEAB5A007B4C19 /* ItemCollectionViewCell.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		C277C59E25BFD45500ADD2EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +169,24 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		C277C5B725BFD4C400ADD2EC /* ViewModel */ = {
+		C277C5C025BFD6A100ADD2EC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C277C5C125BFD6AA00ADD2EC /* DataType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C277C5D425BFEBB900ADD2EC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C277C5D625BFEBC600ADD2EC /* View */,
+				C277C5D525BFEBC100ADD2EC /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C277C5D525BFEBC100ADD2EC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				C277C5B825BFD4CE00ADD2EC /* HomeViewModel.swift */,
@@ -195,12 +194,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		C277C5C025BFD6A100ADD2EC /* Protocols */ = {
+		C277C5D625BFEBC600ADD2EC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C277C5C125BFD6AA00ADD2EC /* DataType.swift */,
+				C235281825BE5AA6007B4C19 /* ViewController.swift */,
+				C235285C25BEAB5A007B4C19 /* ItemCollectionViewCell.swift */,
 			);
-			path = Protocols;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

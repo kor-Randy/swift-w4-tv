@@ -7,6 +7,4 @@
 
 import Foundation
 
-protocol DataType: Decodable{
-    
-}
+protocol DataType: Decodable {}
