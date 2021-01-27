@@ -22,28 +22,18 @@ class ItemCollectionViewCell: UICollectionViewCell {
 
     // MARK: Internal
 
-    func updateUI(data: DataType) {
-        if let data = data as? Original {
-            thumbnail.image = UIImage(named: data.clip.thumbnailUrl)
-            labelInThumbnail.text = "\(TimeConverter.shared.convertDuration(duration: data.clip.duration))"
-            title.text = data.clip.title
-            channel.text = data.channel.name
-            visitCount.text = "▶︎ \(data.channel.visitCount)"
-            createTime.text = "• \(TimeConverter.shared.maxRangeInSubtractDate(dateStr: data.channel.createTime))"
-        } else {
-            guard let data = data as? LiveData else { return }
-            thumbnail.image = UIImage(named: data.live.thumbnailUrl)
-            labelInThumbnail.text = "\(data.live.playCount)"
-            title.text = data.live.title
-            channel.text = data.channel.name
-            visitCount.text = "▶︎ \(data.channel.visitCount)"
-            createTime.text = "• \(TimeConverter.shared.maxRangeInSubtractDate(dateStr: data.channel.createTime))"
-        }
+    func updateUI(thumbnailImage: UIImage, duration: String, title: String, channel: String, visitCount: Int, createTime: String) {
+        thumbnailImageView.image = thumbnailImage
+        labelInThumbnail.text = duration
+        titleLabel.text = title
+        channelLabel.text = channel
+        visitCountLabel.text = "▶︎ \(visitCount)"
+        createTimeLabel.text = "• \(createTime)"
     }
 
     // MARK: Private
 
-    private var thumbnail: UIImageView = {
+    private var thumbnailImageView: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.clipsToBounds = true
@@ -58,7 +48,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    private var title: UITextView = {
+    private var titleLabel: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.automaticallyAdjustsScrollIndicatorInsets = false
@@ -69,21 +59,21 @@ class ItemCollectionViewCell: UICollectionViewCell {
         return textView
     }()
 
-    private var channel: UILabel = {
+    private var channelLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(named: "TextColor")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    private var visitCount: UILabel = {
+    private var visitCountLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(named: "TextColor")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    private var createTime: UILabel = {
+    private var createTimeLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(named: "TextColor")
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -104,42 +94,42 @@ class ItemCollectionViewCell: UICollectionViewCell {
 
 extension ItemCollectionViewCell {
     private func setThumbnail() {
-        addSubview(thumbnail)
-        thumbnail.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        thumbnail.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.6).isActive = true
-        thumbnail.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 0).isActive = true
-        thumbnail.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: 0).isActive = true
+        addSubview(thumbnailImageView)
+        thumbnailImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        thumbnailImageView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.6).isActive = true
+        thumbnailImageView.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 0).isActive = true
+        thumbnailImageView.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: 0).isActive = true
     }
 
     private func setLabelInThumbnail() {
         addSubview(labelInThumbnail)
-        labelInThumbnail.rightAnchor.constraint(equalTo: thumbnail.rightAnchor, constant: -8).isActive = true
-        labelInThumbnail.bottomAnchor.constraint(equalTo: thumbnail.bottomAnchor, constant: -8).isActive = true
+        labelInThumbnail.rightAnchor.constraint(equalTo: thumbnailImageView.rightAnchor, constant: -8).isActive = true
+        labelInThumbnail.bottomAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: -8).isActive = true
     }
 
     private func setTitle() {
-        addSubview(title)
-        title.topAnchor.constraint(equalTo: thumbnail.bottomAnchor, constant: 10).isActive = true
-        title.widthAnchor.constraint(equalTo: thumbnail.widthAnchor).isActive = true
-        title.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.2).isActive = true
-        title.leadingAnchor.constraint(equalTo: thumbnail.leadingAnchor).isActive = true
+        addSubview(titleLabel)
+        titleLabel.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 10).isActive = true
+        titleLabel.widthAnchor.constraint(equalTo: thumbnailImageView.widthAnchor).isActive = true
+        titleLabel.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.2).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: thumbnailImageView.leadingAnchor).isActive = true
     }
 
     private func setChannel() {
-        addSubview(channel)
-        channel.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 5).isActive = true
-        channel.leadingAnchor.constraint(equalTo: title.leadingAnchor).isActive = true
+        addSubview(channelLabel)
+        channelLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5).isActive = true
+        channelLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
     }
 
     private func setVisitCount() {
-        addSubview(visitCount)
-        visitCount.topAnchor.constraint(equalTo: channel.topAnchor).isActive = true
-        visitCount.leftAnchor.constraint(equalTo: channel.rightAnchor, constant: 10).isActive = true
+        addSubview(visitCountLabel)
+        visitCountLabel.topAnchor.constraint(equalTo: channelLabel.topAnchor).isActive = true
+        visitCountLabel.leftAnchor.constraint(equalTo: channelLabel.rightAnchor, constant: 10).isActive = true
     }
 
     private func setCreateTime() {
-        addSubview(createTime)
-        createTime.topAnchor.constraint(equalTo: visitCount.topAnchor).isActive = true
-        createTime.leftAnchor.constraint(equalTo: visitCount.rightAnchor, constant: 10).isActive = true
+        addSubview(createTimeLabel)
+        createTimeLabel.topAnchor.constraint(equalTo: visitCountLabel.topAnchor).isActive = true
+        createTimeLabel.leftAnchor.constraint(equalTo: visitCountLabel.rightAnchor, constant: 10).isActive = true
     }
 }

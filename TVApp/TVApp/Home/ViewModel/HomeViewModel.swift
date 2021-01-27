@@ -5,21 +5,24 @@
 //  Created by 지현우 on 2021/01/26.
 //
 
-import Foundation
+import UIKit
 
 class HomeViewModel {
     // MARK: Lifecycle
 
     init() {
-        let originalDecoder = Decoder<Original>()
-        originals = originalDecoder.decode(filename: "original")
+        let originals: [Original] = Decoder.decode(filename: "original")
+        items = originals.map { (item) -> Item in
+            Item(item)
+        }
 
-        let liveDecoder = Decoder<LiveData>()
-        lives = liveDecoder.decode(filename: "live")
+        let lives: [LiveData] = Decoder.decode(filename: "live")
+        items.append(contentsOf: lives.map { (item) -> Item in
+            Item(item)
+        })
     }
 
     // MARK: Internal
 
-    var originals: [Original] = []
-    var lives: [LiveData] = []
+    var items: [Item] = []
 }
