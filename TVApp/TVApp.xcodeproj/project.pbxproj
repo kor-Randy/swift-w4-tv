@@ -16,16 +16,12 @@
 		C235282C25BE5AA7007B4C19 /* TVAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235282B25BE5AA7007B4C19 /* TVAppTests.swift */; };
 		C235283725BE5AA7007B4C19 /* TVAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235283625BE5AA7007B4C19 /* TVAppUITests.swift */; };
 		C235285D25BEAB5A007B4C19 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235285C25BEAB5A007B4C19 /* ItemCollectionViewCell.swift */; };
-		C277C5A025BFD47400ADD2EC /* Original.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C59F25BFD47400ADD2EC /* Original.swift */; };
-		C277C5A825BFD48B00ADD2EC /* LiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5A725BFD48B00ADD2EC /* LiveData.swift */; };
-		C277C5AD25BFD49E00ADD2EC /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5AC25BFD49E00ADD2EC /* Channel.swift */; };
 		C277C5B325BFD4B400ADD2EC /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5B225BFD4B400ADD2EC /* JsonDecoder.swift */; };
 		C277C5B925BFD4CE00ADD2EC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5B825BFD4CE00ADD2EC /* HomeViewModel.swift */; };
 		C277C5C225BFD6AA00ADD2EC /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5C125BFD6AA00ADD2EC /* DataType.swift */; };
 		C277C5CB25BFDBD000ADD2EC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C277C5CA25BFDBD000ADD2EC /* Colors.xcassets */; };
 		C277C5D025BFDFB000ADD2EC /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5CF25BFDFB000ADD2EC /* TimeConverter.swift */; };
 		C277C68625C1650400ADD2EC /* DiffType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C68525C1650400ADD2EC /* DiffType.swift */; };
-		C277C68B25C16AC900ADD2EC /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C68A25C16AC900ADD2EC /* JSONParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,16 +57,12 @@
 		C235283625BE5AA7007B4C19 /* TVAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAppUITests.swift; sourceTree = "<group>"; };
 		C235283825BE5AA7007B4C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C235285C25BEAB5A007B4C19 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
-		C277C59F25BFD47400ADD2EC /* Original.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Original.swift; sourceTree = "<group>"; };
-		C277C5A725BFD48B00ADD2EC /* LiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveData.swift; sourceTree = "<group>"; };
-		C277C5AC25BFD49E00ADD2EC /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		C277C5B225BFD4B400ADD2EC /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
 		C277C5B825BFD4CE00ADD2EC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C277C5C125BFD6AA00ADD2EC /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
 		C277C5CA25BFDBD000ADD2EC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		C277C5CF25BFDFB000ADD2EC /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		C277C68525C1650400ADD2EC /* DiffType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffType.swift; sourceTree = "<group>"; };
-		C277C68A25C16AC900ADD2EC /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +149,7 @@
 		C277C59E25BFD45500ADD2EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C277C59F25BFD47400ADD2EC /* Original.swift */,
-				C277C5A725BFD48B00ADD2EC /* LiveData.swift */,
-				C277C5AC25BFD49E00ADD2EC /* Channel.swift */,
+				C277C5C125BFD6AA00ADD2EC /* DataType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,7 +159,6 @@
 			children = (
 				C277C5B225BFD4B400ADD2EC /* JsonDecoder.swift */,
 				C277C5CF25BFDFB000ADD2EC /* TimeConverter.swift */,
-				C277C68A25C16AC900ADD2EC /* JSONParser.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -177,7 +166,6 @@
 		C277C5C025BFD6A100ADD2EC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C277C5C125BFD6AA00ADD2EC /* DataType.swift */,
 				C277C68525C1650400ADD2EC /* DiffType.swift */,
 			);
 			path = Protocols;
@@ -341,18 +329,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C277C68625C1650400ADD2EC /* DiffType.swift in Sources */,
-				C277C5AD25BFD49E00ADD2EC /* Channel.swift in Sources */,
 				C277C5C225BFD6AA00ADD2EC /* DataType.swift in Sources */,
 				C277C5B925BFD4CE00ADD2EC /* HomeViewModel.swift in Sources */,
-				C277C68B25C16AC900ADD2EC /* JSONParser.swift in Sources */,
 				C235281925BE5AA6007B4C19 /* ViewController.swift in Sources */,
 				C235285D25BEAB5A007B4C19 /* ItemCollectionViewCell.swift in Sources */,
 				C277C5D025BFDFB000ADD2EC /* TimeConverter.swift in Sources */,
 				C235281525BE5AA6007B4C19 /* AppDelegate.swift in Sources */,
 				C277C5B325BFD4B400ADD2EC /* JsonDecoder.swift in Sources */,
 				C235281725BE5AA6007B4C19 /* SceneDelegate.swift in Sources */,
-				C277C5A025BFD47400ADD2EC /* Original.swift in Sources */,
-				C277C5A825BFD48B00ADD2EC /* LiveData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
