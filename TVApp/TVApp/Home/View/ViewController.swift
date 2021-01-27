@@ -9,10 +9,11 @@ import UIKit
 
 // MARK: - ViewController
 
-typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
-typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
 class ViewController: UIViewController {
     // MARK: Internal
+
+    typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,39 +27,6 @@ class ViewController: UIViewController {
 
     @objc func segChanged(seg: UISegmentedControl) {
         applySnapshot()
-    }
-
-    func applySnapshot(animatingDifferences: Bool = true) {
-        var snapshot = Snapshot()
-
-        snapshot.appendSections([.main])
-        if segment.selectedSegmentIndex == 0 {
-            snapshot.appendItems(viewModel.items.filter {
-                print($0.data is Original)
-                return $0.data is Original
-            })
-        } else {
-            snapshot.appendItems(viewModel.items.filter {
-                $0.data is LiveData
-            })
-        }
-
-
-        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
-    }
-
-    func makeDataSource() -> DataSource {
-        dataSource = DataSource(collectionView: collectionView) { [weak self] (collectionView, indexPath, item) -> UICollectionViewCell? in
-            guard let self = self else { return UICollectionViewCell() }
-
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as? ItemCollectionViewCell
-
-            cell?.updateUI(data: item.data)
-
-            return cell
-        }
-
-        return dataSource
     }
 
     // MARK: Private
@@ -107,12 +75,53 @@ class ViewController: UIViewController {
         return button
     }()
 
-//    private var watchMode: Int = 0 {
-//        didSet {
-//            collectionView.reloadData()
-//            collectionView.contentOffset = CGPoint(x: 0, y: 0)
-//        }
-//    }
+    private func applySnapshot(animatingDifferences: Bool = true) {
+        var snapshot = Snapshot()
+
+        snapshot.appendSections([.main])
+
+        if segment.selectedSegmentIndex == 0 {
+            snapshot.appendItems(viewModel.items.filter {
+                $0.data is Original
+            })
+        } else {
+            snapshot.appendItems(viewModel.items.filter {
+                $0.data is LiveData
+            })
+        }
+
+        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
+    }
+
+    private func makeDataSource() -> DataSource {
+        dataSource = DataSource(collectionView: collectionView) { [weak self] (collectionView, indexPath, item) -> UICollectionViewCell? in
+            guard let self = self, let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as? ItemCollectionViewCell else { return UICollectionViewCell() }
+
+            if self.segment.selectedSegmentIndex == 0 {
+                guard let original = item.data as? Original else { return UICollectionViewCell() }
+                cell.updateUI(
+                    thumbnailImage: UIImage(named: original.clip.thumbnailUrl) ?? UIImage(),
+                    duration: "\(TimeConverter.shared.convertDuration(duration: original.clip.duration))",
+                    title: original.clip.title,
+                    channel: original.channel.name,
+                    visitCount: original.channel.visitCount,
+                    createTime: TimeConverter.shared.maxRangeInSubtractDate(dateStr: original.channel.createTime))
+            } else {
+                guard let live = item.data as? LiveData else { return UICollectionViewCell() }
+                cell.updateUI(
+                    thumbnailImage: UIImage(named: live.live.thumbnailUrl) ?? UIImage(),
+                    duration: "\(TimeConverter.shared.convertDuration(duration: live.live.playCount))",
+                    title: live.live.title,
+                    channel: live.channel.name,
+                    visitCount: live.channel.visitCount,
+                    createTime: TimeConverter.shared.maxRangeInSubtractDate(dateStr: live.channel.createTime))
+            }
+
+            return cell
+        }
+
+        return dataSource
+    }
 
     private func addViews() {
         initNavigationBar()
@@ -131,22 +140,7 @@ class ViewController: UIViewController {
 
 // MARK: UICollectionViewDelegate, UICollectionViewDataSource
 
-extension ViewController: UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return watchMode == 0 ? viewModel.originals.count : viewModel.lives.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? ItemCollectionViewCell else {
-//            return UICollectionViewCell()
-//        }
-//
-//        let data: DataType = (watchMode == 0) ? viewModel.originals[indexPath.row] : viewModel.lives[indexPath.row]
-//
-//        cell.updateUI(data: data)
-//        return cell
-//    }
-}
+extension ViewController: UICollectionViewDelegate {}
 
 extension ViewController {
     private func setSearchBar() {

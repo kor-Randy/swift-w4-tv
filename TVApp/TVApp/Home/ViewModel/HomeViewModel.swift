@@ -12,15 +12,14 @@ class HomeViewModel {
 
     init() {
         let originals: [Original] = Decoder.decode(filename: "original")
-        items = originals.map({ (item) -> Item in
+        items = originals.map { (item) -> Item in
+            Item(item)
+        }
+
+        let lives: [LiveData] = Decoder.decode(filename: "live")
+        items.append(contentsOf: lives.map { (item) -> Item in
             Item(item)
         })
-        
-        let lives:[LiveData]  = Decoder.decode(filename: "live")
-        items.append(contentsOf: lives.map({ (item) -> Item in
-            Item(item)
-        }))
-        
     }
 
     // MARK: Internal
