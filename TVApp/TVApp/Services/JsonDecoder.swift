@@ -7,8 +7,8 @@
 
 import UIKit
 
-class Decoder<T: Decodable> {
-    func decode(filename: String) -> [T] {
+class Decoder {
+    static func decode<T: Decodable>(filename: String) -> [T] {
         let decoder = JSONDecoder()
         var datas: [T] = []
         guard let data = NSDataAsset(name: filename) else { return [] }
