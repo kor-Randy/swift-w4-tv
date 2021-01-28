@@ -173,9 +173,22 @@ extension ViewController {
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width - 5
-        let height = collectionView.bounds.height * 0.7
+        var width: CGFloat
+        var height: CGFloat
+        
+        let itemSpacing: CGFloat = 10
+        let bottomSize: CGFloat = 40
+
+        switch UIDevice.current.orientation {
+        case .portrait:
+            width = collectionView.bounds.width - itemSpacing
+            height = width * 7/10 + bottomSize
+        default:
+            width = (collectionView.bounds.width - itemSpacing)/2
+            height = width * 7/10 + bottomSize
+        }
 
         return CGSize(width: width, height: height)
     }
 }
+

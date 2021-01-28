@@ -55,6 +55,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
         textView.font = UIFont.systemFont(ofSize: 20)
         textView.textContainer.maximumNumberOfLines = 2
         textView.textColor = UIColor(named: "TextColor")
+        textView.isScrollEnabled = false
         textView.isMultipleTouchEnabled = true
         return textView
     }()
