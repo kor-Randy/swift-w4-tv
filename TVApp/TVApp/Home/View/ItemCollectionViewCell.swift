@@ -13,6 +13,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addViews()
+        self.backgroundColor = UIColor.backgroundColor
     }
 
     @available(*, unavailable)
@@ -51,10 +52,9 @@ class ItemCollectionViewCell: UICollectionViewCell {
     private var titleLabel: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.automaticallyAdjustsScrollIndicatorInsets = false
         textView.font = UIFont.systemFont(ofSize: 20)
         textView.textContainer.maximumNumberOfLines = 2
-        textView.textColor = UIColor(named: "TextColor")
+        textView.textColor = UIColor.textColor
         textView.isScrollEnabled = false
         textView.isMultipleTouchEnabled = true
         return textView
@@ -62,21 +62,21 @@ class ItemCollectionViewCell: UICollectionViewCell {
 
     private var channelLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(named: "TextColor")
+        label.textColor = UIColor.textColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private var visitCountLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(named: "TextColor")
+        label.textColor = UIColor.textColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private var createTimeLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(named: "TextColor")
+        label.textColor = UIColor.textColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

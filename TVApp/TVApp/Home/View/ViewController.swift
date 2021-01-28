@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         addViews()
         applySnapshot()
+        view.backgroundColor = UIColor.backgroundColor
     }
 
     @objc func tappedStar() {
@@ -64,7 +65,7 @@ class ViewController: UIViewController {
         layout.minimumLineSpacing = 20
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-
+        cv.backgroundColor = UIColor.backgroundColor
         return cv
     }()
 
@@ -163,7 +164,6 @@ extension ViewController {
         collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -10).isActive = true
         collectionView.topAnchor.constraint(equalTo: segment.bottomAnchor, constant: 5).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-//        collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(ItemCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
     }
@@ -175,20 +175,36 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var width: CGFloat
         var height: CGFloat
-        
-        let itemSpacing: CGFloat = 10
-        let bottomSize: CGFloat = 40
 
-        switch UIDevice.current.orientation {
-        case .portrait:
-            width = collectionView.bounds.width - itemSpacing
+        let itemSpacing: CGFloat = 10
+        let bottomSize: CGFloat = 60
+        switch (UIDevice.current.userInterfaceIdiom, UIDevice.current.orientation) {
+        case (.phone, .portrait):
+            width = (collectionView.bounds.width - itemSpacing)
             height = width * 7/10 + bottomSize
-        default:
+        case (.phone, _):
             width = (collectionView.bounds.width - itemSpacing)/2
             height = width * 7/10 + bottomSize
+        case (.pad, .portrait):
+            fallthrough
+        case (.pad, .portraitUpsideDown):
+            width = (collectionView.bounds.width - itemSpacing)/2
+            height = width * 7/10 + bottomSize
+        case (.pad, _):
+            width = (collectionView.bounds.width - (itemSpacing * 2))/3
+            height = width * 7/10 + bottomSize
+        default:
+            width = 0
+            height = 0
+            print("Should Implement \(UIDevice.current.userInterfaceIdiom)")
         }
 
         return CGSize(width: width, height: height)
     }
-}
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.invalidateLayout()
+        }
+    }
+}

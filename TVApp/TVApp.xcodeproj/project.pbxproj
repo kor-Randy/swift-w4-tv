@@ -22,6 +22,7 @@
 		C277C5CB25BFDBD000ADD2EC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C277C5CA25BFDBD000ADD2EC /* Colors.xcassets */; };
 		C277C5D025BFDFB000ADD2EC /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5CF25BFDFB000ADD2EC /* TimeConverter.swift */; };
 		C277C68625C1650400ADD2EC /* DiffType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C68525C1650400ADD2EC /* DiffType.swift */; };
+		C277C6C325C27D5A00ADD2EC /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C6C225C27D5A00ADD2EC /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		C277C5CA25BFDBD000ADD2EC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		C277C5CF25BFDFB000ADD2EC /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		C277C68525C1650400ADD2EC /* DiffType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffType.swift; sourceTree = "<group>"; };
+		C277C6C225C27D5A00ADD2EC /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		C235281325BE5AA6007B4C19 /* TVApp */ = {
 			isa = PBXGroup;
 			children = (
+				C277C6C125C27D0C00ADD2EC /* Extension */,
 				C277C5D425BFEBB900ADD2EC /* Home */,
 				C277C5C025BFD6A100ADD2EC /* Protocols */,
 				C277C5B125BFD4AB00ADD2EC /* Services */,
@@ -195,6 +198,14 @@
 				C235285C25BEAB5A007B4C19 /* ItemCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C277C6C125C27D0C00ADD2EC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C277C6C225C27D5A00ADD2EC /* UIColor+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +348,7 @@
 				C235281525BE5AA6007B4C19 /* AppDelegate.swift in Sources */,
 				C277C5B325BFD4B400ADD2EC /* JsonDecoder.swift in Sources */,
 				C235281725BE5AA6007B4C19 /* SceneDelegate.swift in Sources */,
+				C277C6C325C27D5A00ADD2EC /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
