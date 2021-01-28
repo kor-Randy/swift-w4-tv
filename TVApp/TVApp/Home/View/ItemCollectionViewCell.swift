@@ -23,7 +23,8 @@ class ItemCollectionViewCell: UICollectionViewCell {
 
     // MARK: Internal
 
-    func updateUI(thumbnailImage: UIImage, duration: String, title: String, channel: String, visitCount: Int, createTime: String) {
+    func updateUI(thumbnailImage: UIImage, duration: String, title: String, channel: String, visitCount: Int, createTime: String, isLive: Bool = false) {
+        isLive ? (liveLabel.isHidden = false) : (liveLabel.isHidden = true)
         thumbnailImageView.image = thumbnailImage
         labelInThumbnail.text = duration
         titleLabel.text = title

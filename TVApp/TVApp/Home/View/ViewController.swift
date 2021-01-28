@@ -115,7 +115,8 @@ class ViewController: UIViewController {
                     title: live.live.title,
                     channel: live.channel.name,
                     visitCount: live.channel.visitCount,
-                    createTime: TimeConverter.shared.maxRangeInSubtractDate(dateStr: live.channel.createTime))
+                    createTime: TimeConverter.shared.maxRangeInSubtractDate(dateStr: live.channel.createTime),
+                    isLive: true)
             }
 
             return cell
