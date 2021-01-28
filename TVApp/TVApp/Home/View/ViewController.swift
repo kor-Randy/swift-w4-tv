@@ -201,10 +201,4 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
         return CGSize(width: width, height: height)
     }
-
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.invalidateLayout()
-        }
-    }
 }
