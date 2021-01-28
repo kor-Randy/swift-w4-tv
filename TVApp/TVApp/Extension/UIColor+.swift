@@ -10,4 +10,5 @@ import UIKit
 extension UIColor{
     static let textColor = UIColor(named: "TextColor")
     static let backgroundColor = UIColor(named: "BackgroundColor")
+    static let TextColorInImage = UIColor(named: "TextColorInImage")
 }

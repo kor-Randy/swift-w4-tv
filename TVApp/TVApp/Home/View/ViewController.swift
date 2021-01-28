@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         addViews()
         applySnapshot()
-        view.backgroundColor = UIColor.backgroundColor
+        view.backgroundColor = .backgroundColor
     }
 
     @objc func tappedStar() {
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         layout.minimumLineSpacing = 20
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = UIColor.backgroundColor
+        cv.backgroundColor = .backgroundColor
         return cv
     }()
 
@@ -176,9 +176,11 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         var width: CGFloat
         var height: CGFloat
 
-        let itemSpacing: CGFloat = 10
+        let itemSpacing: CGFloat = 20
         let bottomSize: CGFloat = 60
         switch (UIDevice.current.userInterfaceIdiom, UIDevice.current.orientation) {
+        case (.phone, .unknown):
+            fallthrough
         case (.phone, .portrait):
             width = (collectionView.bounds.width - itemSpacing)
             height = width * 7/10 + bottomSize
@@ -194,8 +196,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
             width = (collectionView.bounds.width - (itemSpacing * 2))/3
             height = width * 7/10 + bottomSize
         default:
-            width = 0
-            height = 0
+            width = (collectionView.bounds.width - itemSpacing)
+            height = width * 7/10 + bottomSize
             print("Should Implement \(UIDevice.current.userInterfaceIdiom)")
         }
 

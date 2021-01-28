@@ -13,7 +13,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addViews()
-        self.backgroundColor = UIColor.backgroundColor
+        self.backgroundColor = .backgroundColor
     }
 
     @available(*, unavailable)
@@ -33,6 +33,17 @@ class ItemCollectionViewCell: UICollectionViewCell {
     }
 
     // MARK: Private
+    
+    private var liveLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.backgroundColor = .red
+        label.font = UIFont.boldSystemFont(ofSize: 12)
+        label.text = "LIVE"
+        label.isHidden = true
+        return label
+    }()
 
     private var thumbnailImageView: UIImageView = {
         let img = UIImageView()
@@ -44,7 +55,8 @@ class ItemCollectionViewCell: UICollectionViewCell {
 
     private var labelInThumbnail: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(named: "TextColor")
+        label.textColor = .white
+        label.backgroundColor = .TextColorInImage
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -54,7 +66,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.font = UIFont.systemFont(ofSize: 20)
         textView.textContainer.maximumNumberOfLines = 2
-        textView.textColor = UIColor.textColor
+        textView.textColor = .textColor
         textView.isScrollEnabled = false
         textView.isMultipleTouchEnabled = true
         return textView
@@ -62,7 +74,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
 
     private var channelLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.textColor
+        label.textColor = .textColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -76,7 +88,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
 
     private var createTimeLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.textColor
+        label.textColor = .textColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -88,12 +100,18 @@ class ItemCollectionViewCell: UICollectionViewCell {
         setChannel()
         setVisitCount()
         setCreateTime()
+        setLive()
     }
 }
 
 // MARK: Add UI Components
 
 extension ItemCollectionViewCell {
+    private func setLive(){
+        addSubview(liveLabel)
+        liveLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
+        liveLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
+    }
     private func setThumbnail() {
         addSubview(thumbnailImageView)
         thumbnailImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
