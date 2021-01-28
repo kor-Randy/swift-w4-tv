@@ -20,7 +20,7 @@ class TimeConverter {
         let minute = (duration) / 60
         let hour = (duration) / (60 * 60)
 
-        return hour == 0 ? "\(minute):\(second)" : "\(hour):\(minute):\(second)"
+        return hour == 0 ? String(format: "%02d:%02d", minute, second) : String(format: "%d:%02d:%02d", hour, minute, second)
     }
 
     func maxRangeInSubtractDate(dateStr: String) -> String {
