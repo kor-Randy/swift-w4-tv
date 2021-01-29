@@ -9,19 +9,25 @@
 /* Begin PBXBuildFile section */
 		C235281525BE5AA6007B4C19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235281425BE5AA6007B4C19 /* AppDelegate.swift */; };
 		C235281725BE5AA6007B4C19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235281625BE5AA6007B4C19 /* SceneDelegate.swift */; };
-		C235281925BE5AA6007B4C19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235281825BE5AA6007B4C19 /* ViewController.swift */; };
 		C235281C25BE5AA6007B4C19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C235281A25BE5AA6007B4C19 /* Main.storyboard */; };
 		C235281E25BE5AA6007B4C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C235281D25BE5AA6007B4C19 /* Assets.xcassets */; };
 		C235282125BE5AA6007B4C19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C235281F25BE5AA6007B4C19 /* LaunchScreen.storyboard */; };
 		C235282C25BE5AA7007B4C19 /* TVAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235282B25BE5AA7007B4C19 /* TVAppTests.swift */; };
 		C235283725BE5AA7007B4C19 /* TVAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235283625BE5AA7007B4C19 /* TVAppUITests.swift */; };
-		C235285D25BEAB5A007B4C19 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235285C25BEAB5A007B4C19 /* ItemCollectionViewCell.swift */; };
-		C277C5B325BFD4B400ADD2EC /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5B225BFD4B400ADD2EC /* JsonDecoder.swift */; };
 		C277C5B925BFD4CE00ADD2EC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5B825BFD4CE00ADD2EC /* HomeViewModel.swift */; };
-		C277C5C225BFD6AA00ADD2EC /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5C125BFD6AA00ADD2EC /* DataType.swift */; };
 		C277C5CB25BFDBD000ADD2EC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C277C5CA25BFDBD000ADD2EC /* Colors.xcassets */; };
-		C277C5D025BFDFB000ADD2EC /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C5CF25BFDFB000ADD2EC /* TimeConverter.swift */; };
-		C277C68625C1650400ADD2EC /* DiffType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C68525C1650400ADD2EC /* DiffType.swift */; };
+		C277C76B25C40EC600ADD2EC /* StarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C76A25C40EC600ADD2EC /* StarViewModel.swift */; };
+		C277C77025C40ECE00ADD2EC /* StarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C76F25C40ECE00ADD2EC /* StarViewController.swift */; };
+		C277C77725C40EE000ADD2EC /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C77425C40EDF00ADD2EC /* ItemCollectionViewCell.swift */; };
+		C277C77825C40EE000ADD2EC /* ItemCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C77525C40EDF00ADD2EC /* ItemCollectionView.swift */; };
+		C277C77925C40EE000ADD2EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C77625C40EDF00ADD2EC /* ViewController.swift */; };
+		C277C78625C40EF500ADD2EC /* DiffType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C78425C40EF500ADD2EC /* DiffType.swift */; };
+		C277C78725C40EF500ADD2EC /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C78525C40EF500ADD2EC /* DataType.swift */; };
+		C277C78E25C40EFC00ADD2EC /* DBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C78C25C40EFC00ADD2EC /* DBRepository.swift */; };
+		C277C78F25C40EFC00ADD2EC /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C78D25C40EFC00ADD2EC /* Star.swift */; };
+		C277C79525C40F0100ADD2EC /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C79425C40F0100ADD2EC /* UIColor+.swift */; };
+		C277C79B25C40F1000ADD2EC /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C79925C40F1000ADD2EC /* JsonDecoder.swift */; };
+		C277C79C25C40F1000ADD2EC /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277C79A25C40F1000ADD2EC /* TimeConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +51,6 @@
 		C235281125BE5AA6007B4C19 /* TVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C235281425BE5AA6007B4C19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C235281625BE5AA6007B4C19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C235281825BE5AA6007B4C19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C235281B25BE5AA6007B4C19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C235281D25BE5AA6007B4C19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C235282025BE5AA6007B4C19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,13 +61,20 @@
 		C235283225BE5AA7007B4C19 /* TVAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C235283625BE5AA7007B4C19 /* TVAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAppUITests.swift; sourceTree = "<group>"; };
 		C235283825BE5AA7007B4C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C235285C25BEAB5A007B4C19 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
-		C277C5B225BFD4B400ADD2EC /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
 		C277C5B825BFD4CE00ADD2EC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		C277C5C125BFD6AA00ADD2EC /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
 		C277C5CA25BFDBD000ADD2EC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		C277C5CF25BFDFB000ADD2EC /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
-		C277C68525C1650400ADD2EC /* DiffType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffType.swift; sourceTree = "<group>"; };
+		C277C76A25C40EC600ADD2EC /* StarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StarViewModel.swift; path = "../../../../../../.Trash/ViewModel 18-36-37-631/StarViewModel.swift"; sourceTree = "<group>"; };
+		C277C76F25C40ECE00ADD2EC /* StarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StarViewController.swift; path = "../../../../../swift-w4-tv 2/TVApp/TVApp/View/Star/StarViewController.swift"; sourceTree = "<group>"; };
+		C277C77425C40EDF00ADD2EC /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCollectionViewCell.swift; path = "../../../../../../swift-w4-tv 2/TVApp/TVApp/View/Home/ItemCollectionViewCell.swift"; sourceTree = "<group>"; };
+		C277C77525C40EDF00ADD2EC /* ItemCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCollectionView.swift; path = "../../../../../../swift-w4-tv 2/TVApp/TVApp/View/Home/ItemCollectionView.swift"; sourceTree = "<group>"; };
+		C277C77625C40EDF00ADD2EC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../../../../../swift-w4-tv 2/TVApp/TVApp/View/Home/ViewController.swift"; sourceTree = "<group>"; };
+		C277C78425C40EF500ADD2EC /* DiffType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffType.swift; sourceTree = "<group>"; };
+		C277C78525C40EF500ADD2EC /* DataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
+		C277C78C25C40EFC00ADD2EC /* DBRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBRepository.swift; sourceTree = "<group>"; };
+		C277C78D25C40EFC00ADD2EC /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		C277C79425C40F0100ADD2EC /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		C277C79925C40F1000ADD2EC /* JsonDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonDecoder.swift; path = "../../../../swift-w4-tv 2/TVApp/TVApp/Services/JsonDecoder.swift"; sourceTree = "<group>"; };
+		C277C79A25C40F1000ADD2EC /* TimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeConverter.swift; path = "../../../../swift-w4-tv 2/TVApp/TVApp/Services/TimeConverter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +125,9 @@
 		C235281325BE5AA6007B4C19 /* TVApp */ = {
 			isa = PBXGroup;
 			children = (
-				C277C5D425BFEBB900ADD2EC /* Home */,
+				C277C79325C40F0000ADD2EC /* Extension */,
+				C277C78B25C40EFC00ADD2EC /* Data */,
+				C277C76025C40E8D00ADD2EC /* View */,
 				C277C5C025BFD6A100ADD2EC /* Protocols */,
 				C277C5B125BFD4AB00ADD2EC /* Services */,
 				C277C59E25BFD45500ADD2EC /* Model */,
@@ -149,7 +163,6 @@
 		C277C59E25BFD45500ADD2EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C277C5C125BFD6AA00ADD2EC /* DataType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,8 +170,8 @@
 		C277C5B125BFD4AB00ADD2EC /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C277C5B225BFD4B400ADD2EC /* JsonDecoder.swift */,
-				C277C5CF25BFDFB000ADD2EC /* TimeConverter.swift */,
+				C277C79925C40F1000ADD2EC /* JsonDecoder.swift */,
+				C277C79A25C40F1000ADD2EC /* TimeConverter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -166,7 +179,6 @@
 		C277C5C025BFD6A100ADD2EC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C277C68525C1650400ADD2EC /* DiffType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -174,6 +186,7 @@
 		C277C5D425BFEBB900ADD2EC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C277C78325C40EF500ADD2EC /* Model */,
 				C277C5D625BFEBC600ADD2EC /* View */,
 				C277C5D525BFEBC100ADD2EC /* ViewModel */,
 			);
@@ -191,10 +204,58 @@
 		C277C5D625BFEBC600ADD2EC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C235281825BE5AA6007B4C19 /* ViewController.swift */,
-				C235285C25BEAB5A007B4C19 /* ItemCollectionViewCell.swift */,
+				C277C77525C40EDF00ADD2EC /* ItemCollectionView.swift */,
+				C277C77425C40EDF00ADD2EC /* ItemCollectionViewCell.swift */,
+				C277C77625C40EDF00ADD2EC /* ViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C277C76025C40E8D00ADD2EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C277C76125C40E9600ADD2EC /* Star */,
+				C277C5D425BFEBB900ADD2EC /* Home */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C277C76125C40E9600ADD2EC /* Star */ = {
+			isa = PBXGroup;
+			children = (
+				C277C76F25C40ECE00ADD2EC /* StarViewController.swift */,
+				C277C76A25C40EC600ADD2EC /* StarViewModel.swift */,
+			);
+			path = Star;
+			sourceTree = "<group>";
+		};
+		C277C78325C40EF500ADD2EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C277C78425C40EF500ADD2EC /* DiffType.swift */,
+				C277C78525C40EF500ADD2EC /* DataType.swift */,
+			);
+			name = Model;
+			path = "../../../../../swift-w4-tv 2/TVApp/TVApp/View/Home/Model";
+			sourceTree = "<group>";
+		};
+		C277C78B25C40EFC00ADD2EC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C277C78C25C40EFC00ADD2EC /* DBRepository.swift */,
+				C277C78D25C40EFC00ADD2EC /* Star.swift */,
+			);
+			name = Data;
+			path = "../../../swift-w4-tv 2/TVApp/TVApp/Data";
+			sourceTree = "<group>";
+		};
+		C277C79325C40F0000ADD2EC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C277C79425C40F0100ADD2EC /* UIColor+.swift */,
+			);
+			name = Extension;
+			path = "../../../swift-w4-tv 2/TVApp/TVApp/Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,15 +389,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C277C68625C1650400ADD2EC /* DiffType.swift in Sources */,
-				C277C5C225BFD6AA00ADD2EC /* DataType.swift in Sources */,
+				C277C77025C40ECE00ADD2EC /* StarViewController.swift in Sources */,
+				C277C77825C40EE000ADD2EC /* ItemCollectionView.swift in Sources */,
+				C277C79B25C40F1000ADD2EC /* JsonDecoder.swift in Sources */,
+				C277C78625C40EF500ADD2EC /* DiffType.swift in Sources */,
+				C277C77925C40EE000ADD2EC /* ViewController.swift in Sources */,
+				C277C78E25C40EFC00ADD2EC /* DBRepository.swift in Sources */,
 				C277C5B925BFD4CE00ADD2EC /* HomeViewModel.swift in Sources */,
-				C235281925BE5AA6007B4C19 /* ViewController.swift in Sources */,
-				C235285D25BEAB5A007B4C19 /* ItemCollectionViewCell.swift in Sources */,
-				C277C5D025BFDFB000ADD2EC /* TimeConverter.swift in Sources */,
+				C277C79525C40F0100ADD2EC /* UIColor+.swift in Sources */,
+				C277C76B25C40EC600ADD2EC /* StarViewModel.swift in Sources */,
 				C235281525BE5AA6007B4C19 /* AppDelegate.swift in Sources */,
-				C277C5B325BFD4B400ADD2EC /* JsonDecoder.swift in Sources */,
+				C277C77725C40EE000ADD2EC /* ItemCollectionViewCell.swift in Sources */,
+				C277C79C25C40F1000ADD2EC /* TimeConverter.swift in Sources */,
 				C235281725BE5AA6007B4C19 /* SceneDelegate.swift in Sources */,
+				C277C78725C40EF500ADD2EC /* DataType.swift in Sources */,
+				C277C78F25C40EFC00ADD2EC /* Star.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
